@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Roomies\Geolocatable\Tests\Services;
 
 use Illuminate\Support\Facades\Http;
-use Roomies\Geolocatable\Services\IpApiCom;
+use Roomies\Geolocatable\Services\IpapiCom;
 use Roomies\Geolocatable\Tests\TestCase;
 
-class IpApiComTest extends TestCase
+class IpapiComTest extends TestCase
 {
     public function test_it_fetches_ip_address_metadata(): void
     {
@@ -16,7 +16,7 @@ class IpApiComTest extends TestCase
             'api.ipapi.com/*' => $this->getResponse(),
         ]);
 
-        $result = (new IpApiCom('accessKey'))->ip('161.185.160.93');
+        $result = (new IpapiCom('accessKey'))->ip('161.185.160.93');
 
         $this->assertEquals('161.185.160.93', $result->ipAddress);
         $this->assertEquals('Bath Beach', $result->location->city);
@@ -30,7 +30,7 @@ class IpApiComTest extends TestCase
             'api.ipapi.com/*' => 400,
         ]);
 
-        $result = (new IpApiCom('accessKey'))->ip('161.185.160.93');
+        $result = (new IpapiCom('accessKey'))->ip('161.185.160.93');
 
         $this->assertNull($result);
     }
