@@ -1,0 +1,87 @@
+{
+    "name": "roomies/geolocatable",
+    "description": "Geolocate IP addresses using a variety of third-party services",
+    "keywords": [
+        "roomies",
+        "laravel",
+        "geocode",
+        "geocoding",
+        "geocodable",
+        "geolocatable",
+        "ip address",
+        "ip addresses",
+        "ipapi",
+        "ip-api",
+        "ipdata",
+        "maxmind",
+        "geoip"
+    ],
+    "homepage": "https://github.com/roomies-com/geolocatable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dwight Watson",
+            "email": "hello@roomies.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "illuminate/console": "^11.0",
+        "illuminate/contracts": "^11.0",
+        "illuminate/http": "^11.0",
+        "illuminate/support": "^11.0",
+        "spatie/temporary-directory": "^2.2.0"
+    },
+    "require-dev": {
+        "geoip2/geoip2": "^3.1",
+        "laravel/pint": "^1.0",
+        "mockery/mockery": "^1.6",
+        "orchestra/testbench": "9.7.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "suggest": {
+        "geoip2/geoip2": "Required to use the MaxMind database service."
+    },
+    "autoload": {
+        "psr-4": {
+            "Roomies\\Geolocatable\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Roomies\\Geolocatable\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/pint",
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "@build",
+            "@php vendor/bin/testbench serve"
+        ],
+        "lint": [
+            "@php vendor/bin/pint"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Roomies\\Geolocatable\\GeolocatableServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
