@@ -1,12 +1,12 @@
-# Roomies Geocodable
+# Roomies Geolocatable
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/roomies/geocodable.svg?style=flat-square)](https://packagist.org/packages/roomies/geocodable)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/roomies-com/geocodable/test.yml?branch=main&label=tests&style=flat-square)](https://github.com/roomies-com/geocodable/actions?query=workflow%3Atest+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/roomies/geocodable.svg?style=flat-square)](https://packagist.org/packages/roomies/geocodable)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/roomies/geolocatable.svg?style=flat-square)](https://packagist.org/packages/roomies/geolocatable)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/roomies-com/geolocatable/test.yml?branch=main&label=tests&style=flat-square)](https://github.com/roomies-com/geolocatable/actions?query=workflow%3Atest+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/roomies/geolocatable.svg?style=flat-square)](https://packagist.org/packages/roomies/geolocatable)
 
 Determine the geographical location, currency and network information of website users based on their IP addresses.
 
-Geocodable is an abstraction over multiple IP geocoding services including [Cloudflare](https://www.cloudflare.com), [Ip2Location](https://www.ip2location.io), [ipapi.co](https://ipapi.co) [ipapi.com](https://ipapi.com), [ip-api.com](https://ip-api.com), [ipdata](https://ipdata.co), [Maxmind GeoIP database and web services](https://www.maxmind.com/en/home).
+Geolocatable is an abstraction over multiple IP geolocation services including [Cloudflare](https://www.cloudflare.com), [Ip2Location](https://www.ip2location.io), [ipapi.co](https://ipapi.co) [ipapi.com](https://ipapi.com), [ip-api.com](https://ip-api.com), [ipdata](https://ipdata.co), [Maxmind GeoIP database and web services](https://www.maxmind.com/en/home).
 
 It's based off of [`laravel-geoip`](https://github.com/Torann/laravel-geoip), but there are some key differences that may affect your decision:
 * it allows you to use multiple providers with different configurations,
@@ -34,7 +34,7 @@ Read through the config file to understand the supported services and provide th
 You can perform an IP address geolcaton using the Facade.
 
 ```php
-use Roomies\Geocodable\Facades\Geocode;
+use Roomies\Geolocatable\Facades\Geolocation;
 
 // Returns an instance of \Roomies\Geolocatable\Result\Geolocation
 $result = Geolocate::ip('129.168.0.1');
@@ -130,7 +130,7 @@ $result = new Roomies\Geolocatable\Result\Geolocation(
     raw: []
 );
 
-Geocode::fake($result);
+Geolocate::fake($result);
 ```
 
 ## License
