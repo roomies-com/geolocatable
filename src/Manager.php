@@ -90,7 +90,7 @@ class Manager extends MultipleInstanceManager
      */
     public function createIpdataDriver(array $config): Services\Ipdata
     {
-        return new Services\IpData(
+        return new Services\Ipdata(
             $config['key']
         );
     }

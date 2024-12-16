@@ -79,7 +79,10 @@
         "laravel": {
             "providers": [
                 "Roomies\\Geolocatable\\GeolocatableServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Geolocate": "Roomies\\Geolocatable\\Facades\\Geolocate"
+            }
         }
     },
     "minimum-stability": "dev",
