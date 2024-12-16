@@ -11,7 +11,7 @@ return [
     | feature. You can swap this service on the fly if required.
     |
     */
-    'default' => env('GEOLOCATABLE_SERVICE', 'maxmind-database'),
+    'default' => env('GEOLOCATABLE_SERVICE', 'cloudflare'),
 
     /*
     |--------------------------------------------------------------------------
@@ -53,7 +53,7 @@ return [
         ],
 
         'ipdata' => [
-            'driver' => 'ipdshdata',
+            'driver' => 'ipdata',
             'key' => env('IPDATA_KEY'),
         ],
 
