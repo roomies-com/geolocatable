@@ -4,10 +4,11 @@ namespace Roomies\Geolocatable\Facades;
 
 use Illuminate\Support\Facades\Facade;
 use Roomies\Geolocatable\GeolocationFake;
+use Roomies\Geolocatable\Manager;
 use Roomies\Geolocatable\Result\Geolocation;
 
 /**
- * @see \Roomies\Geolocatable\Manager
+ * @see Manager
  */
 class Geolocate extends Facade
 {
