@@ -8,6 +8,8 @@ use Roomies\Geolocatable\Manager;
 use Roomies\Geolocatable\Result\Geolocation;
 
 /**
+ * @method static Geolocation|null ip(string $ipAddress)
+ *
  * @see Manager
  */
 class Geolocate extends Facade
